@@ -4925,6 +4925,13 @@ extern "C" {
     unsigned Z3_API Z3_get_ast_hash(Z3_context c, Z3_ast a);
 
     /**
+       \brief Get an AST's depth. Variables have depth=1.
+
+       def_API('Z3_get_expr_depth', UINT, (_in(CONTEXT), _in(AST)))
+    */
+    unsigned Z3_API Z3_get_expr_depth(Z3_context c, Z3_ast a);
+
+    /**
        \brief Return the sort of an AST node.
 
        The AST node must be a constant, application, numeral, bound variable, or quantifier.

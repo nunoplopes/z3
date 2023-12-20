@@ -412,6 +412,13 @@ extern "C" {
         return to_ast(a)->hash();
     }
 
+    unsigned Z3_API Z3_get_expr_depth(Z3_context c, Z3_ast a) {
+        LOG_Z3_get_expr_depth(c, a);
+        RESET_ERROR_CODE();
+        CHECK_IS_EXPR(a, 0);
+        return get_depth(to_expr(a));
+    }
+
     bool Z3_API Z3_is_app(Z3_context c, Z3_ast a) {
         LOG_Z3_is_app(c, a);
         RESET_ERROR_CODE();
